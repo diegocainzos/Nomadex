@@ -1,6 +1,5 @@
 import os
 import requests
-import spacy
 from django.http import JsonResponse
 import json
 from dotenv import load_dotenv
