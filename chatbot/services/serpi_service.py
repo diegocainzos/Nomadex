@@ -44,14 +44,17 @@ def hotel_query(params):
         # Build the formatted string
         hoteles_encontrados = []
         for hotel in lista_hoteles[:10]:
+
             info_hotel = {
                 "nombre": hotel.get("name"),
-                "precio": hotel.get("rate_per_night", {}).get("lowest"),
+                "precio": hotel.get("rate_per_night", {}).get("extracted_lowest"),
                 "puntuacion": hotel.get("overall_rating"),
                 "total_opiniones": hotel.get("reviews"),
                 "descripcion": hotel.get("description"),
-                "enlace_google": hotel.get("link")
+                "enlace_google": hotel.get("link"),
+                "hotel_class" : hotel.get("hotel_class", "0-star hotel"),
             }
+
             hoteles_encontrados.append(info_hotel)
         hoteles_encontrados.append({"adults" : params["adults"]})
         hoteles_encontrados.append({"checkin" : params["check_in_date"]})

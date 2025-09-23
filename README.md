@@ -1,32 +1,38 @@
-# KodigoViajero
+# Nomadex
 
 A Django-based travel chatbot that can answer questions directly or call a hotel search tool (Google Hotels via SerpAPI) and synthesize a compact Markdown reply for users.
+
+![Landing Page](./media/pics/LandingPage.png)
 
 ## Features
 - Modern chat UI with safe Markdown rendering
 - Orchestrator that decides tool-use vs. direct reply
 - Hotel search via SerpAPI (Google Hotels)
 - LLM responses via Hugging Face Inference API Router
-- Clean pages: Home, Chat, HTMX demo
+- Clean pages
+
+## Example prompts
+
+![Example-1](./media/pics/Example.png)
+![Example-2](./media/pics/Example2.png)
+
 
 ## Stack
 - Python 3.11+
 - Django 4.2+/5.x
 - Hugging Face Inference API (Router)
 - SerpAPI (Google Hotels)
-- spaCy (en_core_web_md)
 - Frontend: Vanilla JS, Marked.js, DOMPurify
 
 ## Structure
-- `kodigoviajero/` – settings, URLs, WSGI/ASGI
+- `Nomadex/` – settings, URLs, WSGI/ASGI
 - `chatbot/`
   - `views.py` – pages + `/api/chatbot/` endpoint
   - `services/`
     - `chatbot_api_service.py` – LLM prompts + API call
     - `orquestrator.py` – decision + flow
     - `serpi_service.py` – SerpAPI Google Hotels
-    - `nlp_service.py` – basic NLP helpers
-- `templates/` – `home.html`, `chatbot.html`, `htmlx.html`
+- `templates/` – `chatbot.html`
 - `requirements.txt`, `manage.py`, `db.sqlite3`
 
 ## How it works
@@ -54,10 +60,9 @@ Settings load these and will raise if missing.
 6. Open `http://127.0.0.1:8000/` (Home) and `/chat/` (Chat)
 
 ## Endpoints
-- `GET /` – Home
-- `GET /chat/` – Chat UI
+
+- `GET /` – Chat UI
 - `POST /api/chatbot/` – Chat API; returns `{ "reply": "..." }`
-- `GET /htmx/` – Demo form posting to the API
 
 ## SerpAPI parameters (tool)
 - `q`, `engine=google_hotels`, `check_in_date`, `check_out_date`, `adults`, `sort_by`, `currency`
@@ -70,5 +75,4 @@ Settings load these and will raise if missing.
 
 ## Troubleshooting
 - Missing tokens → app raises at startup
-- Ensure `en_core_web_md` is installed for NLP helpers
 - Mind API rate limits (HF/SerpAPI)

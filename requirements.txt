@@ -13,7 +13,6 @@ cymem==2.0.11
 Django==5.2.4
 django-crispy-forms==2.4
 django-environ==0.12.0
-en_core_web_md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl#sha256=5e6329fe3fecedb1d1a02c3ea2172ee0fede6cea6e4aefb6a02d832dba78a310
 google_search_results==2.4.2
 gunicorn==23.0.0
 idna==3.10
@@ -39,9 +38,6 @@ requests==2.32.4
 rich==14.1.0
 shellingham==1.5.4
 smart_open==7.3.0.post1
-spacy==3.8.7
-spacy-legacy==3.0.12
-spacy-loggers==1.0.5
 sqlparse==0.5.3
 srsly==2.5.1
 thinc==8.3.6

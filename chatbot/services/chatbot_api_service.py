@@ -46,7 +46,7 @@ tools = [
             {
                 "name": "check_in_date",
                 "type": "string",
-                "description": "Check-in date in YYYY-MM-DD format. Example: '2025-09-15'. If the user doesn't specify a concrete period, invent one, always after 2025-10-01."
+                "description": "Check-in date in YYYY-MM-DD format. If the user doesn't specify a concrete period, invent one, always after 2025-11-01."
             },
             {
                 "name": "check_out_date",
@@ -142,7 +142,7 @@ Now, create a conversational response for the user. You MUST follow these rules:
 1.  **Conversational Start:** Begin with a friendly greeting. Summarize in one sentence what you found, including the location. Example: "Of course! I found several hotels in [City] for your stay between [check_in_date] and [check_in_date] for [adults] adults. Here are the top results:"
 
 2.  **Markdown Table:** Present all the hotel options in a compact Markdown table.
-    *   The table columns should be: `Hotel`, `Price`, `Rating`, `Reviews`.
+    *   The table columns should be: `Hotel`, `Price`, `Rating`, `Reviews`,`Hotel Class` .
     *   The `Hotel` name MUST be a clickable Markdown link using the `enlace_google` field: `[Hotel Name](enlace_google)`.
     *   Do not use any emojis.
 

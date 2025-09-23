@@ -26,7 +26,7 @@ dotenv_path = BASE_DIR / '.env'
 load_dotenv(dotenv_path=dotenv_path)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Load tokens from environment
 SERPI_TOKEN = os.getenv('SERPAPI')
