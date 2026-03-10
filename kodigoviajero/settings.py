@@ -47,7 +47,7 @@ if not SERPI_TOKEN:
 SECRET_KEY = os.getenv(
     'SECRET_KEY', 'django-insecure-c9w-zrdwc-fle*em)8(nta@061z-j3y#80q5q-97co0qp_y_82')
 
-ALLOWED_HOSTS = ["kodigoviajero.onrender.com"]
+ALLOWED_HOSTS = ["kodigoviajero.onrender.com", "127.0.0.1", "nomadex.diegocainzos.cv"]
 
 
 
